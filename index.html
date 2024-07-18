@@ -8,11 +8,18 @@
     body {
         font-family: Arial, sans-serif;
         text-align: center;
+        background-image: url('background.jpg'); /* 背景图片的相对路径 */
+        background-size: cover; /* 使背景图像覆盖整个页面 */
+        background-repeat: no-repeat; /* 防止背景图像重复 */
+        background-position: top
     }
     .container {
         margin: 50px auto;
         width: 80%;
         max-width: 600px;
+        background: rgba(255, 255, 255, 0.8); /* 添加半透明的白色背景 */
+        padding: 20px;
+        border-radius: 10px;
     }
     input[type="text"] {
         padding: 10px;
@@ -64,9 +71,9 @@
     function getIdNumber(name) {
         var idNumbers = {
             "陈彦荣": "350103200611150000",
-		"林宏泽": "350182200610030000",
-		"张梓锋": "114514191800000",
-		"俞振鑫": "350181200703100000",
+            "林宏泽": "350182200610030000",
+            "张梓锋": "114514191800000",
+            "俞振鑫": "350181200703100000",
             "陈城": "350128200706070000",
             "叶新涛": "350982200701050000"
             // 添加更多姓名与身份证号的对应关系
