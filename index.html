@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>身份证查询</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .container {
+        margin: 50px auto;
+        width: 80%;
+        max-width: 600px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>请输入姓名查询身份证号</h2>
+    <input type="text" id="nameInput" placeholder="请输入姓名">
+    <button onclick="lookupID()">查询</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function lookupID() {
+        var name = document.getElementById("nameInput").value;
+        var idNumber = getIdNumber(name); // 调用获取身份证号的函数
+        if (idNumber) {
+            document.getElementById("result").innerHTML = "<strong>身份证号：</strong>" + idNumber;
+        } else {
+            document.getElementById("result").innerHTML = "<strong>未找到该姓名对应的身份证号。</strong>";
+        }
+    }
+
+    // 自定义函数，根据姓名获取身份证号，可以根据需要自行修改实现
+    function getIdNumber(name) {
+        var idNumbers = {
+            "陈彦荣": "350103200611150000",
+		"林宏泽": "350182200610030000",
+		"张梓锋": "114514191800000",
+		"俞振鑫": "350181200703100000",
+            "陈城": "350128200706070000",
+            "叶新涛": "350982200701050000"
+            // 添加更多姓名与身份证号的对应关系
+        };
+        return idNumbers[name];
+    }
+</script>
+</body>
+</html>
