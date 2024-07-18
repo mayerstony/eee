@@ -5,13 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>身份证查询</title>
 <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
     body {
         font-family: Arial, sans-serif;
         text-align: center;
         background-image: url('background.jpg'); /* 背景图片的相对路径 */
-        background-size: cover; /* 使背景图像覆盖整个页面 */
+        background-size: 100% auto; /* 背景图片宽度100%，高度自动 */
         background-repeat: no-repeat; /* 防止背景图像重复 */
-        background-position: top
+        background-attachment: scroll; /* 背景图片随内容滚动 */
+        background-position: top center; /* 背景图片在页面顶部居中对齐 */
+        min-height: 200vh; /* 设置页面高度为视口高度的两倍，以触发滚动 */
     }
     .container {
         margin: 50px auto;
